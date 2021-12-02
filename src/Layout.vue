@@ -10,26 +10,28 @@
         content-style="padding: 24px;"
         bordered
       ></n-layout-sider>
-      <n-layout-content content-style="padding: 24px;">平山道</n-layout-content>
-    </n-layout>
-    <n-layout has-sider>
-      <n-layout-sider
-        collapse-mode="transform"
-        :collapsed-width="120"
-        :width="240"
-        show-trigger="bar"
-        content-style="padding: 24px;"
-        bordered
-      >海淀桥</n-layout-sider>
-      <n-layout-content content-style="padding: 24px;">平山道</n-layout-content>
+      <n-layout-content content-style="padding: 24px;">
+        <div>
+          count:
+          <span>{{ count }}</span>
+        </div>
+        <button @click="handleChange">change</button>
+      </n-layout-content>
     </n-layout>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { defineComponent } from "vue";
+import { defineComponent, computed } from "vue";
 import { NSpace, NLayout, NLayoutSider, NLayoutContent } from 'naive-ui';
 import TopNav from './components/TopNav/index'
+import GlobalStore from "./store/index";
+
+const store = GlobalStore();
+const count = computed(() => store.count);
+const handleChange = () => {
+  store.setCount(store.count + 1);
+}
 </script>
 
 <style lang="less">
