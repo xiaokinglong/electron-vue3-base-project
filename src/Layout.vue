@@ -11,6 +11,7 @@
         bordered
       ></n-layout-sider>
       <n-layout-content content-style="padding: 24px;">
+        <Setting />
         <router-view></router-view>
       </n-layout-content>
     </n-layout>
@@ -21,6 +22,8 @@
 import { defineComponent, computed } from "vue";
 import { NSpace, NLayout, NLayoutSider, NLayoutContent } from 'naive-ui';
 import GlobalStore from "./store/index";
+
+import Setting from './components/setting/index.vue';
 
 const store = GlobalStore();
 const count = computed(() => store.count);
