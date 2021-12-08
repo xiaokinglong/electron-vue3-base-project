@@ -1,7 +1,7 @@
 <template>
   <div class="code-layout">
     <n-layout has-sider>
-      <TopNav />
+      <!-- <TopNav /> -->
       <n-layout-sider
         collapse-mode="width"
         :collapsed-width="120"
@@ -11,11 +11,7 @@
         bordered
       ></n-layout-sider>
       <n-layout-content content-style="padding: 24px;">
-        <div>
-          count:
-          <span>{{ count }}</span>
-        </div>
-        <button @click="handleChange">change</button>
+        <router-view></router-view>
       </n-layout-content>
     </n-layout>
   </div>
@@ -24,7 +20,6 @@
 <script lang="ts" setup>
 import { defineComponent, computed } from "vue";
 import { NSpace, NLayout, NLayoutSider, NLayoutContent } from 'naive-ui';
-import TopNav from './components/TopNav/index'
 import GlobalStore from "./store/index";
 
 const store = GlobalStore();
