@@ -1,9 +1,5 @@
 <template>
   <div>
-    <!-- <n-switch :value="values.value" @update:value="switchUpdate">
-      <template #checked>开启</template>
-      <template #unchecked>关闭</template>
-    </n-switch> -->
     <n-icon size="40" @click="() => values = true">
       <svg
         xmlns="http://www.w3.org/2000/svg"
